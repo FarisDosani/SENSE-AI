@@ -1,120 +1,141 @@
 <div align="center">
 
-# 🧠 SENSE-AI
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:1d4ed8,100:06b6d4&height=180&section=header&text=SENSE-AI&fontSize=42&fontColor=ffffff&fontAlignY=36&desc=Movie%20Review%20Sentiment%20Analysis&descAlignY=57&descSize=16" alt="SENSE-AI — movie review sentiment analysis" width="100%" />
 
-**`Deep Learning · Sentiment Analysis · Real-Time NLP`**
+**A Streamlit sentiment-analysis interface backed by an optional TensorFlow model with local fallbacks.**
 
-Sense AI is a deep-learning-powered sentiment engine that moves beyond simple keyword matching.
-Built with **TensorFlow** and **Keras**, it analyzes the vibe of movie reviews to determine
-if a film is a **Peak** masterpiece or a **Flop** — in real-time.
-
-![Python](https://img.shields.io/badge/Python-3.13-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-Deep%20Learning-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
+<img src="https://img.shields.io/badge/Python-3.13-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.13" />
+<img src="https://img.shields.io/badge/TensorFlow-LSTM-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow LSTM" />
+<img src="https://img.shields.io/badge/Streamlit-Interface-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Streamlit interface" />
+<img src="https://img.shields.io/badge/NLTK-VADER-06B6D4?style=for-the-badge&logo=python&logoColor=white" alt="NLTK VADER" />
 
 </div>
 
-## 🔥 Key Features
+## Overview
 
-#### 🔁 Sequence-Aware Deep Learning
+SENSE-AI classifies IMDb-style movie reviews as positive or negative through an interactive Streamlit application. When the trained model file is available, the app loads a saved Keras model and tokenizer for sequence-based inference. If the model cannot be loaded, it falls back to NLTK VADER and finally to a small built-in sentiment lexicon.
 
-![LSTM](https://img.shields.io/badge/Architecture-LSTM-EE4C2C?style=for-the-badge&logo=tensorflow&logoColor=white)
-![Context](https://img.shields.io/badge/Context-Word%20Order%20Aware-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![Sarcasm](https://img.shields.io/badge/Handles-Sarcasm%20and%20Complex%20Opinions-3670A0?style=for-the-badge&logo=python&logoColor=white)
+The repository also includes notebooks for preprocessing the IMDb review dataset, comparing neural architectures, training an LSTM classifier, and testing saved artifacts against a small curated review set.
 
-- 🧬 Uses **LSTM (Long Short-Term Memory)** layers to understand context and word order
-- 🎭 Accurately identifies **sarcasm** and nuanced complex opinions
+## Key Features
 
-#### 🧮 Vectorized Word Mapping
+- Positive/negative sentiment prediction from free-form review text.
+- Optional TensorFlow/Keras LSTM inference using a saved tokenizer and model.
+- VADER fallback when the neural model is unavailable.
+- Lightweight lexical fallback when NLTK sentiment data cannot be loaded.
+- Text normalization, HTML removal, alphabetic filtering, and stopword removal.
+- Confidence and normalized sentiment-score display.
+- Sample-review selector and compact IMDb-style review catalog.
+- Custom Streamlit interface with a cinema-inspired visual design.
 
-![Embeddings](https://img.shields.io/badge/Word-Embeddings-150458?style=for-the-badge&logo=numpy&logoColor=white)
-![Semantic](https://img.shields.io/badge/Semantic-Grouping-013243?style=for-the-badge&logo=numpy&logoColor=white)
+## How Prediction Works
 
-- 📐 Leverages **high-dimensional Word Embeddings** to mathematically group similar concepts
-- 🔗 Example: `breathtaking` and `stunning` are understood as semantically equivalent
-
-#### 🎨 Dynamic UI Experience
-
-![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Glassmorphism](https://img.shields.io/badge/Style-Glassmorphism%20CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Live Feed](https://img.shields.io/badge/Feed-Auto%20Rotating%20IMDb%20Buzz-F7DF1E?style=for-the-badge&logo=imdb&logoColor=black)
-
-- ✨ High-end **Streamlit** interface with custom CSS **Glassmorphism** styling
-- ⚡ Real-time **Aura Checks** with live sentiment feedback
-- 🔄 Auto-rotating **live buzz feed** powered by IMDb samples
-
-#### 🛡️ Dual-Engine Backend
-
-![Neural Net](https://img.shields.io/badge/Engine%201-Neural%20Network-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![VADER](https://img.shields.io/badge/Engine%202-VADER%20Fallback-4ea94b?style=for-the-badge&logo=python&logoColor=white)
-![Uptime](https://img.shields.io/badge/Availability-Always%20Online-brightgreen?style=for-the-badge)
-
-- 🔀 Includes a **robust fallback system (VADER Lexicon)** for guaranteed uptime
-- 🧠 Neural network handles primary inference — VADER kicks in when offline
-
-## 🛠️ Tech Stack
-
-### 🖥️ Language
-![Python](https://img.shields.io/badge/Python-3.13-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-
-### 🤖 Deep Learning
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
-
-### 🔤 NLP
-![NLTK](https://img.shields.io/badge/NLTK-NLP%20Toolkit-3670A0?style=for-the-badge&logo=python&logoColor=white)
-![Tokenization](https://img.shields.io/badge/Tokenization-Sequence%20Padding-013243?style=for-the-badge&logo=numpy&logoColor=white)
-
-### 🎨 Frontend
-![Streamlit](https://img.shields.io/badge/Streamlit-Custom%20CSS-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Glassmorphism](https://img.shields.io/badge/Design-Glassmorphism-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-
-### 📊 Data
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-
-## 🚀 Quick Start
-
-**0. DOWNLOAD THESE FILES AND KEEP THEM IN PROJECT FOLDER: https://www.kaggle.com/datasets/shahzaibalyy/sense-ai-files
-
-**1. Clone the repository**
-```bash
-git clone https://github.com/yourusername/sense-ai.git
-cd sense-ai
+```mermaid
+flowchart LR
+    Review["Review text"] --> Check{"Model + tokenizer available?"}
+    Check -->|Yes| Clean["Preprocess + tokenize + pad to 100"]
+    Clean --> LSTM["Saved Keras classifier"]
+    Check -->|No| Vader{"VADER available?"}
+    Vader -->|Yes| V["VADER compound score"]
+    Vader -->|No| Lexicon["Built-in positive/negative lexicon"]
+    LSTM --> Result["Positive / Negative + confidence"]
+    V --> Result
+    Lexicon --> Result
 ```
 
-**2. Install dependencies**
-```bash
-pip install -r requirements.txt
+The decision threshold is `0.5`. Confidence is calculated as the model score for positive predictions and `1 - score` for negative predictions.
+
+## Model Development
+
+The training notebook uses the IMDb review dataset and performs:
+
+- an 80/20 train-test split;
+- stopword-aware text preprocessing;
+- Keras tokenization with a maximum sequence length of 100;
+- 100-dimensional GloVe embeddings;
+- comparisons between dense, convolutional, and LSTM classifiers.
+
+The saved notebook output records an LSTM test accuracy of **86.83%** with a test loss of **0.3575** on that notebook's held-out split. This is a retained experiment result, not a guarantee for arbitrary reviews or the fallback engines.
+
+## Project Structure
+
+```text
+SENSE-AI/
+├── app.py                                      # Streamlit application
+├── tokenizer.json                              # Saved training tokenizer
+├── IMDb_TOP50_Reviews.csv                      # Curated sample reviews
+├── sentiment-analysis-imdb-movie-reviews.ipynb # Training and model comparison
+├── sentiment-analysis-model-testing.ipynb      # Saved-model testing workflow
+├── LICENSE
+└── README.md
 ```
 
-**3. Launch the app**
-```bash
-streamlit run app.py
+The trained `sentiment_classifier2.h5` model and full `IMDb Dataset.csv` training data are referenced by the code and notebooks but are not committed to this repository. The original project documentation points to the external project files on Kaggle:
+
+[Download the SENSE-AI model/data files](https://www.kaggle.com/datasets/shahzaibalyy/sense-ai-files)
+
+## Installation
+
+### Basic App with Fallback Inference
+
+```powershell
+git clone https://github.com/FarisDosani/SENSE-AI.git
+cd SENSE-AI
+
+py -3.13 -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install streamlit pandas nltk
+python -m streamlit run app.py
 ```
+
+Streamlit prints the local application URL after startup.
+
+### TensorFlow Model Inference
+
+To use the trained neural classifier:
+
+1. Install TensorFlow/Keras in the same environment.
+2. Place `sentiment_classifier2.h5` in the repository root.
+3. Keep the matching `tokenizer.json` beside it.
+4. Restart the Streamlit app.
+
+```powershell
+pip install tensorflow
+python -m streamlit run app.py
+```
+
+When both files load successfully, the sidebar reports **TensorFlow LSTM** as the active backend. Otherwise, the app continues with a fallback engine.
+
+## Usage
+
+1. Open the Streamlit URL.
+2. Choose a sample title when sample data is available, or enter a custom review.
+3. Select **Predict Sentiment**.
+4. Review the positive/negative label, sentiment score, confidence, and active backend.
+
+The application expects `IMDb Dataset.csv` for its optional sample catalog. The repository currently includes `IMDb_TOP50_Reviews.csv`; rename or replace the file only in your local environment if you want that dataset to populate the app without changing the source path.
+
+## Technical Notes
+
+- Neural inference uses sequences padded to 100 tokens.
+- The tokenizer and model must come from the same training run.
+- NLTK resources may be downloaded automatically on first use.
+- TensorFlow is imported only when both neural artifacts are present.
+- The fallback paths keep the interface usable but are not equivalent to the trained LSTM.
+- No claim is made that the model reliably detects sarcasm or every form of nuanced sentiment.
+
+## Attribution
+
+This repository is a fork of [shah-zaib-ali/SENSE-AI](https://github.com/shah-zaib-ali/SENSE-AI). Original project history and contributor credit are preserved through the fork relationship.
+
+Licensed under the [MIT License](LICENSE).
+
+---
 
 <div align="center">
 
-![Step 1](https://img.shields.io/badge/Step%201-Clone%20Repo-3670A0?style=for-the-badge&logo=git&logoColor=white)
-![Step 2](https://img.shields.io/badge/Step%202-Install%20Deps-FF6F00?style=for-the-badge&logo=pypi&logoColor=white)
-![Step 3](https://img.shields.io/badge/Step%203-Run%20App-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+<a href="https://github.com/FarisDosani/SENSE-AI">View repository</a> · <a href="https://github.com/shah-zaib-ali/SENSE-AI">Upstream project</a>
 
-</div>
-
-## 🎓 Student Innovation
-
-![IMDb](https://img.shields.io/badge/Data-IMDb%20Dataset-F7DF1E?style=for-the-badge&logo=imdb&logoColor=black)
-![Binary](https://img.shields.io/badge/Model-Binary%20Classification-EE4C2C?style=for-the-badge&logo=tensorflow&logoColor=white)
-![UX](https://img.shields.io/badge/Focus-Modern%20UX%20Design-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-
-Developed as a specialized bridge between raw **IMDb datasets** and modern UX design.
-We transformed standard **1-10 rating systems** into a **binary classification model**
-specifically tuned for cinematic language.
-
-<div align="center">
-
-![Peak](https://img.shields.io/badge/Verdict-PEAK-brightgreen?style=for-the-badge)
-![Flop](https://img.shields.io/badge/Verdict-FLOP-red?style=for-the-badge)
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f172a,50:1d4ed8,100:06b6d4&height=85&section=footer" alt="" width="100%" />
 
 </div>
